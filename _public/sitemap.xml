@@ -23,13 +23,10 @@
     <loc>http://0.0.0.0:4000/en/404/</loc>
   </url>
   <url>
-    <loc>http://0.0.0.0:4000/en/a/</loc>
+    <loc>http://0.0.0.0:4000/de/about/</loc>
   </url>
   <url>
     <loc>http://0.0.0.0:4000/en/about/</loc>
-  </url>
-  <url>
-    <loc>http://0.0.0.0:4000/de/about/</loc>
   </url>
   <url>
     <loc>http://0.0.0.0:4000/de/team/aleksejdix/</loc>
@@ -41,13 +38,13 @@
     <loc>http://0.0.0.0:4000/de/blog/</loc>
   </url>
   <url>
-    <loc>http://0.0.0.0:4000/de/</loc>
+    <loc>http://0.0.0.0:4000/de/team/</loc>
   </url>
   <url>
     <loc>http://0.0.0.0:4000/en/</loc>
   </url>
   <url>
-    <loc>http://0.0.0.0:4000/de/team/</loc>
+    <loc>http://0.0.0.0:4000/de/</loc>
   </url>
   <url>
     <loc>http://0.0.0.0:4000/</loc>
