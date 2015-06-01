@@ -1,0 +1,26 @@
+---
+layout: default
+translate-id: page-index
+---
+<div class="posts">
+  
+  {% assign posts = site.posts | where: "lang", page.lang %}
+
+  <article class="post">
+
+    {% for post in posts %}
+
+
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2> 
+
+      <div class="entry">
+        {% include date/german.html %}
+      </div >
+
+      <a href="{{ post.url }}" class="read-more">weiterlesen</a>
+
+    {% endfor %}
+    
+  </article>
+
+</div>

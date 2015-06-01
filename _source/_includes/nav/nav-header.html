@@ -1,0 +1,39 @@
+<!-- set autolang and nav -->
+{% assign nav = include.nav.main-menu.[page.lang].links %}
+<!-- check for nav existence -->
+{% if nav.size > 0 %}
+	<ul class="site-nav">
+
+		<!-- loot for first level of nav -->
+		{% for link in nav %}
+
+			<!-- set all needed variables to false -->
+			{% assign current = false %}
+			{% assign has-sub-menu = false %}
+			{% assign parent-link-active = false %}
+
+			<!-- check for current add current class to the list item of nav -->
+			<li{% if page.url contains link.url %} class="current"{% endif %}>
+			  <a href="{{ link.url }}">{{ link.title }}
+				  {% if link.links.size > 0 %}
+				  	{% assign has-sub-menu = true %}
+				  {% endif %}
+			  </a>
+			  	<ul>
+			  		{% for link in link.links %}
+							<!-- compare link.url with page.url -->
+							{% if link.url == page.url %}
+								<!-- set current to true -->
+								{% assign current = true %}
+							{% endif %}
+							<li{% if page.url contains link.url %} class="current"{% endif %}>
+								<a href="{{ link.url }}">{{ link.title }}</a>
+						  </li>
+			  		{% endfor %}
+			  	</ul>
+			</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p class="m--error">no navigation</p>
+{% endif %}

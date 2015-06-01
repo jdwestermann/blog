@@ -1,0 +1,55 @@
+---
+---
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+
+{% include head/head.html %}
+
+  <body>
+
+      <div class="debug">
+
+      {% if page.is-page %}
+        Page
+      {% elsif page.is-post %}
+        Post
+      {% endif %}
+       >>> URL: {{ page.url }} 
+       >>> TID: {{ page.translate-id }}
+
+      </div>
+
+    <div class="site__wrapper">
+
+      <div class="site__header">
+
+        <header class="masthead">
+
+          <nav>
+
+            <a class="link__home" href="{{ site.baseurl }}/">{{ site.data.settings.sitename }}</a>
+
+            {% include nav/nav-language.html lang=site.data.languages %}
+            {% include nav/nav-header.html nav=site.data.linklists %}
+
+          </nav>
+
+        </header>
+
+      </div>
+
+      <main  class="site__content" role="main">
+        {{ content }}
+      </main>
+
+  
+      <footer class="site__footer">
+
+      </footer>
+
+          
+    </div>
+
+    {% include analytics.html %}
+  </body>
+</html>

@@ -1,36 +1,7 @@
 #
 # This file contains configuration flags to customize your site
 #
-
-# Name of your site (displayed in the header)
-name: Aleksej Dix
-
-# Short bio or description (displayed in the header)
-description: Web Developer from Germany
-
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
-
-#
-# Flags below are optional
-#
-
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email: info@aleksejdix.com
-  facebook: aleksejdix
-  flickr:
-  github: aleksejdix
-  instagram:
-  linkedin: aleksejdix
-  pinterest:
-  rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
-  twitter: aleksejdix
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
-
+encoding: utf-8
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
@@ -41,28 +12,27 @@ google_analytics:
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: "http://aleksejdix.github.io"
+url: "http://0.0.0.0:4000"
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
-baseurl: "/blog"
-
+baseurl: ""
 #
 # !! You don't need to change any of the configuration flags below !!
 #
 
 markdown: redcarpet
 highlighter: pygments
-permalink: /:title/
 
 # The release of Jekyll Now that you're using
-version: v1.1.0
+version: v2.5.3
 
-# Set the Sass partials directory, as we're using @imports
-sass:
-  style: :expanded # You might prefer to minify using :compressed
+source:      ./_source
+destination: ./_public
+relative_permalinks: false
+permalink: pretty
 
 # Use the following plug-ins
 gems:
@@ -70,55 +40,44 @@ gems:
 
 # Exclude these files from your production _site
 exclude:
-    - Gemfile
-    - Gemfile.lock
-    - LICENSE
-    - README.md
-    - CNAME
-    
-prose:
-  rooturl: "src"
-  siteurl: "https://aleksejdix.com"
-  relativeLinks: 'src/links.jsonp'
-  media: "src/img/"
-  ignore:
-    - _data
-    - _layouts
-    - _includes
-    - _plugins
-    - _data
-    - _config.yml
-    - feed.xml
-    - .editorconfig
-    - .gitattributes
-    - Gruntfile.job
-    - README.md
-    - package.json
-    - _public
-    - css
-    - js
-    - 404.html
-    - error.html
-    - 200.html
-    - robots.txt
-    - index.html
-  metadata:
-    _posts:
-      - name: "title"
-        field:
-          element: "text"
-          label: "ÜBERSCHRIFT"
-      - name: "tags"
-        field:
-          element: "multiselect"
-          label: "Add Tags"
-          placeholder: "Choose Tags"
-          options:
-            - name: "Apples"
-              value: "apples"
-            - name: "Bananas"
-              value: "bananas"
-            - name: "Pears"
-              value: "pears"
-            - name: "Mangos"
-              value: "mangos"
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+
+include:
+  - _pages
+
+keep_files:   
+  - .git
+  - .svn
+
+collections:
+  team:
+    output: true
+
+defaults:
+  - 
+    scope:
+      path: de
+    values:
+      lang: de
+  - 
+    scope:
+      path: en
+    values:
+      lang: en
+  -
+    scope:
+      type: posts
+    values:
+      layout: post
+      is-post: true
+  -
+    scope:
+      type: pages 
+    values:
+      layout: page 
+      is-page: true

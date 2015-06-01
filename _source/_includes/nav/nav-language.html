@@ -1,0 +1,20 @@
+{% if page.is-page %}
+	{% assign pages-by-id = site.pages | where:"translate-id", page.translate-id %}
+{% elsif page.is-post %}
+	{% assign pages-by-id = site.posts | where:"translate-id", page.translate-id | reverse %}
+{% endif %}
+
+
+<ul class="site-nav">
+
+	{% for post in pages-by-id %}
+	    <li{% if page.url == post.url %} class="current"{% endif %}>
+	        <a 
+	        href="{{ post.url }}"
+	        class="language--{{ post.lang }}">
+		      	{{ post.lang }}
+	        </a>
+	    </li>
+	{% endfor %}
+	
+</ul>

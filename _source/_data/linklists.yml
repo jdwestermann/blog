@@ -1,0 +1,26 @@
+---
+main-menu:
+  de:
+    links:
+      - title: "blog"
+        url: /de/blog/
+      - title: "Team"
+        url: /de/team/
+      - title: "karriere"
+        url: /de/karriere/
+        links: 
+          - title: "stellenangebote"
+            url: /de/karriere/stellenangebote/
+          - title: "Bewerbung"
+            url: /de/karriere/bewerbung/
+  en:
+    links:
+      - title: "blog"
+        url: /en/blog/
+      - title: "career"
+        url: /en/career/
+        links: 
+          - title: "stellenangebote"
+            url: /en/karriere/stellenangebote/
+          - title: "Bewerbung"
+            url: /en/karriere/bewerbung/

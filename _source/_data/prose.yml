@@ -1,0 +1,47 @@
+---
+prose:
+  rooturl: "src"
+  siteurl: "https://aleksejdix.com"
+  relativeLinks: 'src/links.jsonp'
+  media: "src/img/"
+  ignore:
+    - _data
+    - _layouts
+    - _includes
+    - _plugins
+    - _data
+    - _config.yml
+    - feed.xml
+    - .editorconfig
+    - .gitattributes
+    - Gruntfile.job
+    - README.md
+    - package.json
+    - _public
+    - css
+    - js
+    - 404.html
+    - error.html
+    - 200.html
+    - robots.txt
+    - index.html
+  metadata:
+    _posts:
+      - name: "title"
+        field:
+          element: "text"
+          label: "ÜBERSCHRIFT"
+      - name: "tags"
+        field:
+          element: "multiselect"
+          label: "Add Tags"
+          placeholder: "Choose Tags"
+          options:
+            - name: "Apples"
+              value: "apples"
+            - name: "Bananas"
+              value: "bananas"
+            - name: "Pears"
+              value: "pears"
+            - name: "Mangos"
+              value: "mangos"
